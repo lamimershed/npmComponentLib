@@ -1,7 +1,6 @@
 {
   "name": "react-npm-comp-lib",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.2",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -13,10 +12,11 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc --p ./tsconfig-build.json && vite build",
+    "build": "tsc --p ./tsconfig-build.json && vite build  ",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "build-tailwind": "NODE_ENV=production npx tailwindcss -i ./lib/index.css -o ./dist/globals.css --postcss --minify"
   },
   "peerDependencies": {
     "react": "^18.2.0",
